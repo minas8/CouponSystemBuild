@@ -2,7 +2,7 @@ import express, { static } from "express";
 import { join } from "path";
 const app = express();
 app.use(static(join(__dirname, "build")));
-app.get("*", (req, res) => {
+app.get("*", function (req, res) {
     res.sendFile(join(__dirname, "/build/index.html"));
 });
 
