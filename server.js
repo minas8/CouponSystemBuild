@@ -1,9 +1,9 @@
-import express, { static } from "express";
-import { join } from "path";
+const express = require("express");
+const path = require("path");
 const app = express();
-app.use(static(join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "build")));
 app.get("*", function (req, res) {
-    res.sendFile(join(__dirname, "/build/index.html"));
+  res.sendFile(path.join(__dirname, "/build/index.html"));
 });
 
 const port = process.env.PORT || 5000;
